@@ -1,0 +1,9 @@
+{%extends 'base.html'%} 
+{% block content %}
+
+
+{%for locations in locations%}
+
+<h1>{{locations.location}}</h1>
+{%endfor%}
+{% endblock %}

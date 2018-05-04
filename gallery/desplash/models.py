@@ -2,6 +2,11 @@ from django.db import models
 
 # Create your models here.
 
+class Location(models.Model):
+    location = models.CharField(max_length=30, blank=True)
+    
+    def __str__(self):
+        return self.location
 
 class Category(models.Model):
     name = models.CharField(max_length=30, blank=True)
@@ -22,6 +27,7 @@ class Image(models.Model):
     description = models.TextField(max_length=100, blank=True)
     date_posted = models.DateTimeField(auto_now=True)
     category = models.ManyToManyField(Category)
+    location = models.ManyToManyField(Location)
 
     @classmethod
     def get_all(cls):
@@ -32,4 +38,11 @@ class Image(models.Model):
     def get_Image_by_category(cls,category):
         images = cls.objects.filter(category=category).all()
         return images
+
+    @classmethod
+    def get_Image_by_location(cls,location):
+        images = cls.objects.filter(location=location).all()
+        return images
+
+
 

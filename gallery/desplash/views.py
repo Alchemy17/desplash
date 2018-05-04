@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Image, Category
+from .models import Image, Category, Location
 import datetime as dt
 from django.http  import HttpResponse
 # Create your views here.
@@ -26,3 +26,9 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
+
+def location(request, location_id):
+
+    locations = Location.get_Image_by_location(id = location_id)
+    return render(request,"location.html", {"locations":locations})

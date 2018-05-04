@@ -78,13 +78,12 @@ div#all {
 
 .view {
   margin: 10px;
-  color: white;
   float: left;
   border: 10px solid #fff;
   overflow: hidden;
   position: relative;
   text-align: center;
-  box-shadow: 0.5px 0.5px 0.5px #e6e6e6;
+  box-shadow: 1px 1px 2px #e6e6e6;
   cursor: default;
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ) no-repeat;
 }
@@ -101,7 +100,9 @@ div#all {
 
 .view img {
   display: block;
-  position: relative
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .view h2 {
