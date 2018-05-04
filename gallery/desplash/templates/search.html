@@ -3,26 +3,35 @@
 <h1>Working</h1>
 <div class="container">
 
+    <div id="all">
   <div class="row">
     {% if gallery%}
       <h2>Found {{ gallery|length }} of searched term {{message}}</h2>
     {% else %}
       <h2> Found 0 articles for the search term {{message}}</h2>
     {% endif %}
+</div>
+</div>
+    <div class="row">
 
-  </div>
+
 
   <div class="row">
 
   {% if gallery %}
     {% for gallery in gallery %}
-      <div class="col-sm-6 col-md-3">
-            <img src="{{gallery.image.url}}" alt="uvyivyv">
-          <h1>{{gallery.image_name}}</h1>
-      </div>
+
+          <div class="view view-tenth">
+                <img src="{{gallery.image.url}}">
+                <div class="mask">
+                  <h2>{{gallery.image_name}}</h2>
+                  <a href="#" class="info">Read More</a>
+                </div>
+              </div>
     {% endfor %}
   {% endif %}
   </div>
 </div>
+
 
 {% endblock %}

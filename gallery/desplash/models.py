@@ -18,7 +18,6 @@ class Category(models.Model):
     
 class Image(models.Model):
     image = models.ImageField(upload_to='gallery/', blank=True)
-    image_url = models.TextField(blank=True)
     image_name = models.CharField(max_length=30, blank=True)
     description = models.TextField(max_length=100, blank=True)
     date_posted = models.DateTimeField(auto_now=True)
