@@ -1,0 +1,19 @@
+body{
+  color: white;
+  background-color: black;
+}
+.imgs{
+  margin-top: 3%;
+}
+#head{
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  padding-top: 12%;
+}
+.bg{
+  background-image: url("");
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/static/back.jpg');
+  height: 50vh;
+  background-attachment: fixed;
+}

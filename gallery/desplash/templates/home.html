@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+{{block.super}} 
+
+<div class="bg">
+    <h1 id="head">Desplash</h1> 
+
+</div>
+<div class="container">
+  <div class="row">
+      {% for image_item in photos %}
+    <!-- displaying News articles -->
+    <div class="imgs col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <img src="{{image_item.image.url}}" style="max-width: 100%;  height: auto; " class="img-fluid" alt="Image">
+      <h2 class="text-center"> {{ image_item.image_name }}</h2>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+
+ 
+{% endblock %}
