@@ -30,5 +30,5 @@ def search_results(request):
 
 def location(request, location_id):
 
-    locations = Image.objects.get(id = location_id)
+    locations = Image.get_Image_by_location(location_id)
     return render(request,"location.html", {"locations":locations})
