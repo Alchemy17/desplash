@@ -4,7 +4,7 @@ from django.db import models
 
 class Location(models.Model):
     location = models.CharField(max_length=30, blank=True)
-    
+
     def __str__(self):
         return self.location
 
@@ -41,8 +41,8 @@ class Image(models.Model):
 
     @classmethod
     def get_Image_by_location(cls,location):
-        images = cls.objects.filter(location=location).all()
-        return images
+        lct = cls.objects.filter(location=location).all()
+        return lct
 
 
 
