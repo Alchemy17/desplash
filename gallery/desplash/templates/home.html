@@ -12,11 +12,13 @@
       {% for image_item in photos %}
     <!-- displaying News articles -->
     <div class="imgs col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <div class="view view-tenth">
+    <div class="view view-second">
       <img class="modal_image" id="myImg" src="{{image_item.image.url}}" style="max-width: 100%;  height: auto; " class="img-fluid" alt="Image">
       <div class="mask">
+          <div class="content">
           <h2>{{image_item.image_name}}</h2>
           <a id="myImg" class="modal_image info">Read More</a>
+          </div>
         </div>
     </div>
     <!-- The Modal -->
