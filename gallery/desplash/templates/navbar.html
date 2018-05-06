@@ -8,6 +8,10 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'welcome' %}">Home <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item active">
+          <a class="nav-link" href="{% url 'location' location_id='Mombasa' %}">Mombasa <span class="sr-only">(current)</span></a>
+        </li>
+    
     </ul>
     <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="gallery">
