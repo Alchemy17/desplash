@@ -36,6 +36,7 @@ class Image(models.Model):
     category = models.ManyToManyField(Category, blank=True, null=True)
     location = models.ManyToManyField(Location, blank=True, null=True)
 
+
     @classmethod
     def get_all(cls):
         images = cls.objects.order_by('-date_posted').all()
@@ -62,3 +63,6 @@ class Image(models.Model):
         image = cls.objects.get(id=id)
         return image
 
+    
+    def __str__(self):
+        return self.image_name
