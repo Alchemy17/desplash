@@ -8,7 +8,6 @@ urlpatterns=[
     url('^$',views.welcome,name = 'welcome'),
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^location/(?P<location_id>[-\w]+)/$', views.location, name='location')
-
 ]
 
 if settings.DEBUG:
