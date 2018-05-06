@@ -11,7 +11,7 @@
   <div class="row">
       {% for image_item in photos %}
     <!-- displaying News articles -->
-    <div class="imgs col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <div class="imgs col-xs-4 col-sm-4 co   l-md-4 col-lg-4">
     <div class="view view-second">
       <img class="modal_image" id="myImg" src="{{image_item.image.url}}" style="max-width: 100%;  height: auto; " class="img-fluid" alt="Image">
       <div class="mask">
@@ -20,6 +20,7 @@
           <img class="modal_image" id="myImg"  src="{{image_item.image.url}}" alt="">
           </div>
         </div>
+    </div>
     </div>
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -30,7 +31,6 @@
         <p>{{ image_item.description }}</p>
         </div>
       </div>
-    </div>
     {%endfor%}
   </div>
 </div>
