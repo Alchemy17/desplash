@@ -41,7 +41,7 @@ class Image(models.Model):
 
     @classmethod
     def get_Image_by_location(cls,location):
-        lct = cls.objects.filter(location=location).all()
+        lct = cls.objects.filter(location__location__icontains=location)
         return lct
 
 
