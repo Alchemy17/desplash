@@ -20,8 +20,7 @@ class Category(models.Model):
 
     @classmethod
     def searched(cls, query):
-        result = cls.objects.filter(name__icontains=query).order_by('-date_posted').first()
-        
+        result = cls.objects.filter(name__icontains=query).order_by('-date_posted').first()   
         return result
         
     def save_category(self):
