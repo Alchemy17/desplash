@@ -33,8 +33,8 @@ class Image(models.Model):
     image_name = models.CharField(max_length=30, blank=True)
     description = models.TextField(max_length=100, blank=True)
     date_posted = models.DateTimeField(auto_now=True)
-    category = models.ManyToManyField(Category, blank=True, null=True)
-    location = models.ManyToManyField(Location, blank=True, null=True)
+    category = models.ManyToManyField(Category, blank=True)
+    location = models.ManyToManyField(Location, blank=True)
 
 
     @classmethod
