@@ -7,7 +7,7 @@ from django.conf import settings
 urlpatterns=[
     url('^$',views.welcome,name = 'welcome'),
     url(r'^search/', views.search_results, name='search_results'),
-    url(r'^location/', views.location, name='location')
+    url(r'^location/(?P<location_id>)', views.location, name='location')
 
 ]
 

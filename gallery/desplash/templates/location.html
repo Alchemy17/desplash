@@ -3,7 +3,70 @@
 
 
 {%for locations in locations%}
-
-<h1>{{locations.location}}</h1>
+<img class="modal_image" id="myImg" src="{{locations.image.url}}" style="max-width: 100%;  height: auto; " class="img-fluid" alt="Image">
+<h1>{{locations.image.url}}</h1>
 {%endfor%}
+{% endblock %}
+
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+{{block.super}} 
+
+<div class="bg">
+    <h1 id="head">Desplash</h1> 
+
+</div>
+<div class="container">
+  <div class="row">
+      {% for image_item in photos %}
+    <!-- displaying News articles -->
+    <div class="imgs col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <div class="view view-second">
+      <img class="modal_image" id="myImg" src="{{image_item.image.url}}" style="max-width: 100%;  height: auto; " class="img-fluid" alt="Image">
+      <div class="mask">
+          <div class="content">
+          <h2>Read More</h2>
+          <img class="modal_image" id="myImg"  src="{{image_item.image.url}}" alt="">
+          </div>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div class="content">
+        <h1 id="push"> {{ image_item.image_name }}</h1>
+        <p>{{ image_item.description }}</p>
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+
+// Get the image and insert it inside the modal - use its "alt" text as a cap
+var img = document.getElementsByClassName('modal_image');
+for(var i=0; i<img.length; i++){
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img[i].addEventListener('click',function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+})
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+    </script>
 {% endblock %}

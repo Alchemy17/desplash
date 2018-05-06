@@ -30,5 +30,5 @@ def search_results(request):
 
 def location(request, location_id):
 
-    locations = Image.objects.filter(location__location__icontains=location_id)
+    locations = Image.objects.filter(location__location__startswith=location_id)
     return render(request,"location.html", {"locations":locations})
