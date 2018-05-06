@@ -43,6 +43,15 @@ class Image(models.Model):
     def get_Image_by_location(cls,location):
         lct = cls.objects.filter(location__location__icontains=location)
         return lct
+    
+    def save_image(self):
+        self.save()
 
+    def delete_image(self):
+        self.delete()
 
+    @classmethod
+    def get_image(cls, id):
+        image = cls.objects.get(id=id)
+        return image
 

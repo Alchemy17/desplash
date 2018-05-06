@@ -16,8 +16,8 @@
       <img class="modal_image" id="myImg" src="{{image_item.image.url}}" style="max-width: 100%;  height: auto; " class="img-fluid" alt="Image">
       <div class="mask">
           <div class="content">
-          <h2>{{image_item.image_name}}</h2>
-          <a id="myImg" class="modal_image info">Read More</a>
+          <h2>Read More</h2>
+          <img class="modal_image" id="myImg"  src="{{image_item.image.url}}" alt="">
           </div>
         </div>
     </div>
@@ -25,7 +25,10 @@
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
+        <div class="content">
         <h1 id="push"> {{ image_item.image_name }}</h1>
+        <p>{{ image_item.description }}</p>
+        </div>
       </div>
     </div>
     {%endfor%}
@@ -36,6 +39,7 @@
 // Get the modal
 var modal = document.getElementById('myModal');
 
+
 // Get the image and insert it inside the modal - use its "alt" text as a cap
 var img = document.getElementsByClassName('modal_image');
 for(var i=0; i<img.length; i++){
@@ -44,7 +48,6 @@ var captionText = document.getElementById("caption");
 img[i].addEventListener('click',function(){
     modal.style.display = "block";
     modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
 })
 }
 
