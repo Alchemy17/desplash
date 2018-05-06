@@ -5,6 +5,12 @@ from django.db import models
 class Location(models.Model):
     location = models.CharField(max_length=30, blank=True)
 
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
     def __str__(self):
         return self.location
 
@@ -26,8 +32,8 @@ class Image(models.Model):
     image_name = models.CharField(max_length=30, blank=True)
     description = models.TextField(max_length=100, blank=True)
     date_posted = models.DateTimeField(auto_now=True)
-    category = models.ManyToManyField(Category)
-    location = models.ManyToManyField(Location)
+    category = models.ManyToManyField(Category, blank=True, null=True)
+    location = models.ManyToManyField(Location, blank=True, null=True)
 
     @classmethod
     def get_all(cls):
