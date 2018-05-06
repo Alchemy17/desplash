@@ -13,10 +13,10 @@
     <!-- displaying News articles -->
     <div class="imgs col-xs-4 col-sm-4 col-md-4 col-lg-4">
     <div class="view view-tenth">
-      <img id="myImg" src="{{image_item.image.url}}" style="max-width: 100%;  height: auto; " class="img-fluid" alt="Image">
+      <img class="modal_image" id="myImg" src="{{image_item.image.url}}" style="max-width: 100%;  height: auto; " class="img-fluid" alt="Image">
       <div class="mask">
           <h2>{{image_item.image_name}}</h2>
-          <a class="modal_image info">Read More</a>
+          <a id="myImg" class="modal_image info">Read More</a>
         </div>
     </div>
     <!-- The Modal -->
@@ -24,7 +24,6 @@
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
         <h1 id="push"> {{ image_item.image_name }}</h1>
-        <div id="caption"></div>
       </div>
     </div>
     {%endfor%}
