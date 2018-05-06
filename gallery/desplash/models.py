@@ -23,7 +23,9 @@ class Category(models.Model):
         result = cls.objects.filter(name__icontains=query).order_by('-date_posted').first()
         
         return result
-
+        
+    def save_category(self):
+        self.save()
     def __str__(self):
         return self.name
     

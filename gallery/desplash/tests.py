@@ -13,8 +13,8 @@ class LocationTestClass(TestCase):
 
     def test_deleting_locations(self):
         self.test_location = Location(location="Eastleigh")
-        self.test_location.save_locations()
-        self.test_location.delete_locations()
+        self.test_location.save_location()
+        self.test_location.delete_location()
         locations = Location.objects.all()
         self.assertTrue(len(locations) < 1)
 
@@ -34,4 +34,9 @@ class ImageTestClass(TestCase):
 
 class CategoryTestClass(TestCase):
     def setUp(self):
-        self.test = Category(category="people")
+        self.test = Category(name="travel")
+
+    def test_saving_category(self):
+        self.test.save_category()
+        images = Category.objects.all()
+        self.assertTrue(len(images) > 0)
