@@ -1,1 +1,1 @@
-web: gunicorn​​project_name(desplasher)​.wsgi​
+web: gunicorn​​project_name(desplash)​.wsgi​
