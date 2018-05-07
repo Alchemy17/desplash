@@ -1,1 +1,1 @@
-web: gunicorn​​project_name(desplaash)​.wsgi​
+web: gunicorn <desplash.wsgi> -b 0.0.0.0:$PORT -w 10
